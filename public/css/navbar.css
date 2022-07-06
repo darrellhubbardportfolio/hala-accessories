@@ -1,0 +1,204 @@
+
+header {
+    width: calc(100vw - 200px);
+    height: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-center;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    top: 0;
+    left: 100px;
+    background-color: white;
+    color: #343a40;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 8px solid rgb(255, 192, 203, 0.60);
+}
+
+header> nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    gap: 20px;
+    max-width: auto;
+    width: auto;
+    margin: 0;
+}
+
+.customer-navlink {
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+
+form[name="search_form"] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-right: auto;
+    padding: 0 8px;
+    border-left: 2px solid #343a40;
+    height: 60px;
+    width: 200px;
+    gap: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+form[name="search_form"]> .material-icons {
+    font-size: 16px;
+}
+
+form[name="search_form"]> input {
+    font-size: 18px;
+    color: #343a40;
+    border: 0;
+    border-radius: 4px;
+    outline: 0;
+    width: 145px;
+    height: 45px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.08s ease-out;
+    font-family: 'Roboto', sans-serif;
+}
+
+form[name="search_form"]> input::-webkit-input-placeholder {
+    font-size: 18px;
+    color: gray;  
+    font-family: 'Roboto', sans-serif;
+}
+
+form[name="search_form"]> input:focus {
+    border-bottom: 2px solid #343a40;
+    transition: 0.16s ease-in;
+}
+
+#Hala-Accessories-Nav-Logo {
+    flex: 1;
+    z-index: 2;
+    /*max-height: 125px;*/
+    /*background-color: pink;*/
+    padding: 0;
+}
+
+#Hala-Accessories-Nav-Logo> h1 {
+    margin: 0;
+    padding: 0;
+}
+
+#Hala-Accessories-Nav-Logo> span {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+#Hala-Accessories-Nav-Logo>:nth-child(3) {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100vw);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 400px;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: rgb(255, 192, 203, 0.85);
+    color: #343a40;
+    backdrop-filter: blur(2px);
+    z-index: 1;
+    overflow: hidden;
+}
+
+#navbar>:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    max-height: 100px;
+    margin: 0;
+}
+
+.navlink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #343a40;
+    text-decoration: none;
+    min-width: 300px;
+    min-height: 100px;
+    max-width: 300px;
+    max-height: 100px;
+    font-size: 28px;
+    font-weight: normal;
+    padding: 0 20px;
+    text-align: left;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+    header {
+        min-width: 100vw;
+        left: 0;
+        border-bottom: 0;
+        background-color: pink;
+        padding: 0;
+    }
+    
+    header> nav {
+        gap: 8px;
+    }
+    
+    .customer-navlink {
+        font-size: 30px;
+    }
+    
+    
+    form[name="search_form"] {
+        display: none;
+    }
+    
+    #Hala-Accessories-Nav-Logo {
+        position: absolute;
+        top: 200px;
+        left: 10px;
+        z-index: 3;
+    }
+    
+    #Hala-Accessories-Nav-Logo> h1 {
+        font-size: 28px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #navbar {
+        transform: translateX(-100vw);
+        width: 100vw;
+    }
+    
+    .navlink {
+        min-width: 100vw;
+        max-width: 100vw;
+    }
+    
+    
+}

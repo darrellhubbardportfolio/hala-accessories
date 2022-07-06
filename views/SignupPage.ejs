@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title> Signup Page </title>
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Google Fonts 'Roboto' --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/public/css/navbar.css" />
+    <link rel="stylesheet" href="/public/css/signup-page.css" />
+    <link rel="stylesheet" href="/public/css/footer.css" />
+  </head>
+  <body>
+
+    <div class="container d-flex flex-row align-items-center justify-content-center" style="width: 100vw; max-width: 100vw; height: 30px; padding: 0 100px; font-size: 10px; background-color: pink; gap: 20px;">
+      <span id="time-of-day" style="font-weight: bold;"></span>
+      <span> Welcome All! </span>
+    </div>
+
+    <header></header>
+
+    <h1 style="margin: 0 auto; margin-top: 100px; text-align: center; padding: 0; font-weight: bolder;"> Register Form</h1>
+
+    <form action="/login" method="POST" name="signup_form">
+
+        <label for="username"> username </label>
+        <input type="text" name="username" required />
+
+        <label for="email"> email </label>
+        <input type="email" name="email" required />
+
+        <label for="password"> password </label>
+        <input type="password" name="password" onkeyup="checkIfConfirmPasswordMatches(this)" required />
+
+        <label for="confirm_password"> confirm password </label>
+        <input type="password" name="confirm_password" onkeyup="checkIfConfirmPasswordMatches(this)" required />
+        <div class="container d-flex align-items-center justify-content-center" style="position: absolute; bottom: -16px;">
+            <span style="display: none; font-size: 10px; max-width: 200px; position: absolute;" id="confirm-password-error-message"> Passwords Do Not Match </span>
+            <span style="display: none; font-size: 10px; color: green; max-width: 200px; position: absolute;" id="confirm-password-success-message"> Passwords Match </span>
+        </div>
+        <button type="submit" name="signup_form"> Register </button>
+
+    </form>
+
+    <span style="font-size: 10px; display: flex; align-items: center; margin: 0 auto; max-width: 150px; text-align: center; gap: 4px;"> Already have an account with us? <a href="/login"style="text-decoration: none;"> Login</a></span>
+
+
+    <footer></footer>
+      
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" integrity="sha512-ttqbKrGZiTtSLguBZ2xNvZrhUv02IO/TRq5U6TG5TK90wbaXWup5kIJ1A1tLzjOk5Mea/G4seVNrU+lwTLfAzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JavaScript -->
+    <script src="/public/js/Auth.js"></script>
+    <script src="/public/js/components/Navbar.js"></script>
+    <script src="/public/js/components/Footer.js"></script>
+
+    <script>
+        // update the time on the facebook messenger every second
+        window.addEventListener("load", function() {
+            setInterval(function () {
+            var hours = new Date().getHours();
+            var minutes = new Date().getMinutes();
+            var timeOfDay;
+            // its afternoon or evening or even night
+            if (hours > 12) {
+                timeOfDay = " pm"
+            }
+            // its morning
+            else if (hours < 12) {
+                timeOfDay = " am";
+            }
+            // keep as the 12-hour format; not the 24 hour that it forces.
+            if (hours > 12) {
+                hours = Math.round(hours - 12);
+            }
+            // keep minutes as 2 digits
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            document.querySelector("#facebook-messenger-time").innerHTML = hours + ":" + minutes + timeOfDay;
+            document.querySelector("#time-of-day").innerHTML = hours + ":" + minutes + timeOfDay;
+            }, 1000);
+        })
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,56 @@
+#pagination {
+    width: 800px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#pages {
+    gap: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: 45px;
+}
+
+.pagination-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: royalblue;
+    cursor: pointer;
+}
+
+#pagination-abbreviation, #pagination-total-pages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height: 45px;
+}
+
+button[name="next_page"], button[name="previous_page"] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #343a40;
+    cursor: pointer;
+    border: 0;
+    width: 200px;
+    height: 45px;
+}
