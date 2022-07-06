@@ -4,11 +4,12 @@ footer {
     align-items: center; 
     justify-content: center;
     gap: 16px;
-    /*background-color: lightgray;*/
+    background-color: pink;
     width: 100vw;
-    min-height: 300px;
+    min-height: 400px;
     padding: 0;
     padding-top: 20px;
+	position: relative;
 }
 
 footer>:nth-child(1) {
@@ -62,6 +63,8 @@ footer>:nth-child(2)>:nth-child(1)> ul {
     gap: 4px;
     color: white;
     background-color: #343a40;
+	position: absolute;
+	bottom: 0;
 }
 
 #social-media-navbar>:nth-child(1) {
